@@ -1,5 +1,5 @@
 from fastapi import APIRouter , Depends, HTTPException , status , Response
-from ..database import create_db_and_table,SessionLocal
+from ..database import SessionLocal
 from .. import models, oauth2
 from typing import List , Optional
 from sqlmodel import select, func
