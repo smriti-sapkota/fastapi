@@ -5,6 +5,15 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+@app.get('/')
+def swagat():
+    return {"name": "FastAPI Blog API",
+             "status": "running",
+             "message": "Backend service is live 🚀",
+             "docs": "/docs"
+           }
+
+
 origins = ['*']
 
 app.add_middleware(
@@ -13,8 +22,6 @@ app.add_middleware(
   allow_credentials=True,
   allow_methods=['*'],
   allow_headers=['*']
-
-
 )
 
 
